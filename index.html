@@ -51,7 +51,7 @@
         }
 
         function setOperator(op) {
-            // Ensure no consecutive operators are entered
+            
             const lastChar = expression.slice(-1);
             if (lastChar !== '+' && lastChar !== '-' && lastChar !== '*' && lastChar !== '/') {
                 expression += op;
@@ -67,9 +67,9 @@
 
         function calculate() {
             try {
-                const output = eval(expression); // Evaluate the expression
+                const output = eval(expression); 
                 result.value = output;
-                expression = output.toString(); // Store the result for further calculations
+                expression = output.toString(); 
                 showMessage('Final Result: ' + output);
             } catch (e) {
                 result.value = 'Error';
@@ -78,7 +78,7 @@
         }
 
         function backspace() {
-            expression = expression.slice(0, -1); // Remove the last character
+            expression = expression.slice(0, -1);
             result.value = expression;
             showMessage('Deleted Character');
         }
